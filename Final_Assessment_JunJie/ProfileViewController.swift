@@ -26,10 +26,11 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(true)
+        statusTextFld.delegate = self
             self.status.removeAll()
             self.statusKey.removeAll()
             self.tableView.reloadData()
-            statusTextFld.delegate = self
+        
             observeStatus()
             observeUser()
         
