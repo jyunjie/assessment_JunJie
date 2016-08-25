@@ -8,22 +8,34 @@
 
 /* Begin PBXBuildFile section */
 		2825F7ED1D6E88ED00C1A834 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2825F7EC1D6E88ED00C1A834 /* AppDelegate.swift */; };
-		2825F7EF1D6E88ED00C1A834 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2825F7EE1D6E88ED00C1A834 /* ViewController.swift */; };
 		2825F7F21D6E88ED00C1A834 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2825F7F01D6E88ED00C1A834 /* Main.storyboard */; };
 		2825F7F51D6E88ED00C1A834 /* Final_Assessment_JunJie.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2825F7F31D6E88ED00C1A834 /* Final_Assessment_JunJie.xcdatamodeld */; };
 		2825F7F71D6E88ED00C1A834 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2825F7F61D6E88ED00C1A834 /* Assets.xcassets */; };
 		2825F7FA1D6E88ED00C1A834 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2825F7F81D6E88ED00C1A834 /* LaunchScreen.storyboard */; };
+		2825F8021D6E8D0400C1A834 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 2825F8011D6E8D0400C1A834 /* .gitignore */; };
+		2825F8041D6E8D7000C1A834 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2825F8031D6E8D7000C1A834 /* User.swift */; };
+		2825F8091D6E91B700C1A834 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2825F8081D6E91B700C1A834 /* LoginViewController.swift */; };
+		2825F80B1D6E926700C1A834 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2825F80A1D6E926700C1A834 /* SignUpViewController.swift */; };
+		2825F80D1D6E942700C1A834 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2825F80C1D6E942700C1A834 /* GoogleService-Info.plist */; };
+		2D3A7451A51E8E9CA66E4669 /* Pods_Final_Assessment_JunJie.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D59BC3F4A626768656927AC1 /* Pods_Final_Assessment_JunJie.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0BA0D774FCBB2D2130425BDD /* Pods-Final_Assessment_JunJie.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Final_Assessment_JunJie.release.xcconfig"; path = "Pods/Target Support Files/Pods-Final_Assessment_JunJie/Pods-Final_Assessment_JunJie.release.xcconfig"; sourceTree = "<group>"; };
 		2825F7E91D6E88ED00C1A834 /* Final_Assessment_JunJie.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Final_Assessment_JunJie.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2825F7EC1D6E88ED00C1A834 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		2825F7EE1D6E88ED00C1A834 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		2825F7F11D6E88ED00C1A834 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		2825F7F41D6E88ED00C1A834 /* Final_Assessment_JunJie.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Final_Assessment_JunJie.xcdatamodel; sourceTree = "<group>"; };
 		2825F7F61D6E88ED00C1A834 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2825F7F91D6E88ED00C1A834 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2825F7FB1D6E88ED00C1A834 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2825F8011D6E8D0400C1A834 /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = .gitignore; path = Final_Assessment_JunJie/.gitignore; sourceTree = "<group>"; };
+		2825F8031D6E8D7000C1A834 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		2825F8081D6E91B700C1A834 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		2825F80A1D6E926700C1A834 /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		2825F80C1D6E942700C1A834 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		7AE67F16BD2145CD9F51BF71 /* Pods-Final_Assessment_JunJie.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Final_Assessment_JunJie.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Final_Assessment_JunJie/Pods-Final_Assessment_JunJie.debug.xcconfig"; sourceTree = "<group>"; };
+		D59BC3F4A626768656927AC1 /* Pods_Final_Assessment_JunJie.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Final_Assessment_JunJie.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +43,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2D3A7451A51E8E9CA66E4669 /* Pods_Final_Assessment_JunJie.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -40,8 +53,11 @@
 		2825F7E01D6E88ED00C1A834 = {
 			isa = PBXGroup;
 			children = (
+				2825F8011D6E8D0400C1A834 /* .gitignore */,
 				2825F7EB1D6E88ED00C1A834 /* Final_Assessment_JunJie */,
 				2825F7EA1D6E88ED00C1A834 /* Products */,
+				4B616B4BA86EDEE135899915 /* Pods */,
+				D79AF4828E1F07639153F32C /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -56,15 +72,51 @@
 		2825F7EB1D6E88ED00C1A834 /* Final_Assessment_JunJie */ = {
 			isa = PBXGroup;
 			children = (
+				2825F8071D6E8DA000C1A834 /* Controllers */,
+				2825F8051D6E8D8C00C1A834 /* Model */,
 				2825F7EC1D6E88ED00C1A834 /* AppDelegate.swift */,
-				2825F7EE1D6E88ED00C1A834 /* ViewController.swift */,
 				2825F7F01D6E88ED00C1A834 /* Main.storyboard */,
 				2825F7F61D6E88ED00C1A834 /* Assets.xcassets */,
 				2825F7F81D6E88ED00C1A834 /* LaunchScreen.storyboard */,
+				2825F80C1D6E942700C1A834 /* GoogleService-Info.plist */,
 				2825F7FB1D6E88ED00C1A834 /* Info.plist */,
 				2825F7F31D6E88ED00C1A834 /* Final_Assessment_JunJie.xcdatamodeld */,
 			);
 			path = Final_Assessment_JunJie;
+			sourceTree = "<group>";
+		};
+		2825F8051D6E8D8C00C1A834 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				2825F8031D6E8D7000C1A834 /* User.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		2825F8071D6E8DA000C1A834 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				2825F8081D6E91B700C1A834 /* LoginViewController.swift */,
+				2825F80A1D6E926700C1A834 /* SignUpViewController.swift */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		4B616B4BA86EDEE135899915 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				7AE67F16BD2145CD9F51BF71 /* Pods-Final_Assessment_JunJie.debug.xcconfig */,
+				0BA0D774FCBB2D2130425BDD /* Pods-Final_Assessment_JunJie.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		D79AF4828E1F07639153F32C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D59BC3F4A626768656927AC1 /* Pods_Final_Assessment_JunJie.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -74,9 +126,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2825F7FE1D6E88ED00C1A834 /* Build configuration list for PBXNativeTarget "Final_Assessment_JunJie" */;
 			buildPhases = (
+				617EBF25AE32143CD09677A4 /* [CP] Check Pods Manifest.lock */,
 				2825F7E51D6E88ED00C1A834 /* Sources */,
 				2825F7E61D6E88ED00C1A834 /* Frameworks */,
 				2825F7E71D6E88ED00C1A834 /* Resources */,
+				817DC769E1868F160E76ACAB /* [CP] Embed Pods Frameworks */,
+				75190CE3BAECECA8B936F144 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -126,7 +181,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2825F8021D6E8D0400C1A834 /* .gitignore in Resources */,
 				2825F7FA1D6E88ED00C1A834 /* LaunchScreen.storyboard in Resources */,
+				2825F80D1D6E942700C1A834 /* GoogleService-Info.plist in Resources */,
 				2825F7F71D6E88ED00C1A834 /* Assets.xcassets in Resources */,
 				2825F7F21D6E88ED00C1A834 /* Main.storyboard in Resources */,
 			);
@@ -134,13 +191,63 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		617EBF25AE32143CD09677A4 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		75190CE3BAECECA8B936F144 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Final_Assessment_JunJie/Pods-Final_Assessment_JunJie-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		817DC769E1868F160E76ACAB /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Final_Assessment_JunJie/Pods-Final_Assessment_JunJie-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		2825F7E51D6E88ED00C1A834 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2825F80B1D6E926700C1A834 /* SignUpViewController.swift in Sources */,
+				2825F8041D6E8D7000C1A834 /* User.swift in Sources */,
 				2825F7F51D6E88ED00C1A834 /* Final_Assessment_JunJie.xcdatamodeld in Sources */,
-				2825F7EF1D6E88ED00C1A834 /* ViewController.swift in Sources */,
+				2825F8091D6E91B700C1A834 /* LoginViewController.swift in Sources */,
 				2825F7ED1D6E88ED00C1A834 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -254,6 +361,7 @@
 		};
 		2825F7FF1D6E88ED00C1A834 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7AE67F16BD2145CD9F51BF71 /* Pods-Final_Assessment_JunJie.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = Final_Assessment_JunJie/Info.plist;
@@ -265,6 +373,7 @@
 		};
 		2825F8001D6E88ED00C1A834 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0BA0D774FCBB2D2130425BDD /* Pods-Final_Assessment_JunJie.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = Final_Assessment_JunJie/Info.plist;
@@ -293,6 +402,7 @@
 				2825F8001D6E88ED00C1A834 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
