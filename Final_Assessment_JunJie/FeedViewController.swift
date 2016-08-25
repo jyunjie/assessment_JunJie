@@ -18,9 +18,16 @@ class FeedViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+    }
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(true)
+        self.friendKey.removeAll()
+        self.feed.removeAll()
+        self.friend.removeAll()
         getInfo()
     }
-
+    
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.friend.count
     }
