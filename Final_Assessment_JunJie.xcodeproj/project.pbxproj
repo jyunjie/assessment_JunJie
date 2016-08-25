@@ -17,6 +17,8 @@
 		2825F8091D6E91B700C1A834 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2825F8081D6E91B700C1A834 /* LoginViewController.swift */; };
 		2825F80B1D6E926700C1A834 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2825F80A1D6E926700C1A834 /* SignUpViewController.swift */; };
 		2825F80D1D6E942700C1A834 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2825F80C1D6E942700C1A834 /* GoogleService-Info.plist */; };
+		2825F80F1D6E985D00C1A834 /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2825F80E1D6E985D00C1A834 /* FeedViewController.swift */; };
+		2825F8111D6E9A2500C1A834 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2825F8101D6E9A2500C1A834 /* ProfileViewController.swift */; };
 		2D3A7451A51E8E9CA66E4669 /* Pods_Final_Assessment_JunJie.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D59BC3F4A626768656927AC1 /* Pods_Final_Assessment_JunJie.framework */; };
 /* End PBXBuildFile section */
 
@@ -34,6 +36,8 @@
 		2825F8081D6E91B700C1A834 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		2825F80A1D6E926700C1A834 /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		2825F80C1D6E942700C1A834 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		2825F80E1D6E985D00C1A834 /* FeedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
+		2825F8101D6E9A2500C1A834 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		7AE67F16BD2145CD9F51BF71 /* Pods-Final_Assessment_JunJie.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Final_Assessment_JunJie.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Final_Assessment_JunJie/Pods-Final_Assessment_JunJie.debug.xcconfig"; sourceTree = "<group>"; };
 		D59BC3F4A626768656927AC1 /* Pods_Final_Assessment_JunJie.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Final_Assessment_JunJie.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -98,6 +102,8 @@
 			children = (
 				2825F8081D6E91B700C1A834 /* LoginViewController.swift */,
 				2825F80A1D6E926700C1A834 /* SignUpViewController.swift */,
+				2825F80E1D6E985D00C1A834 /* FeedViewController.swift */,
+				2825F8101D6E9A2500C1A834 /* ProfileViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -248,6 +254,8 @@
 				2825F8041D6E8D7000C1A834 /* User.swift in Sources */,
 				2825F7F51D6E88ED00C1A834 /* Final_Assessment_JunJie.xcdatamodeld in Sources */,
 				2825F8091D6E91B700C1A834 /* LoginViewController.swift in Sources */,
+				2825F8111D6E9A2500C1A834 /* ProfileViewController.swift in Sources */,
+				2825F80F1D6E985D00C1A834 /* FeedViewController.swift in Sources */,
 				2825F7ED1D6E88ED00C1A834 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
