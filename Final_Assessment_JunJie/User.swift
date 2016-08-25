@@ -30,5 +30,7 @@ class User {
     class func removeUserUid() {
         NSUserDefaults.standardUserDefaults().removeObjectForKey("uid")
     }
+
     
 }
+
