@@ -10,23 +10,35 @@ import UIKit
 import Firebase
 
 class FeedViewController: UIViewController {
-
+    
     var firebaseRef = FIRDatabase.database().reference()
     var feed = [String]()
     var friend = [String]()
     var friendKey = [String]()
+    var feedRef : FIRDatabaseReference!
+    var handle : UInt!
+    
     @IBOutlet weak var tableView: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
         
     }
-    override func viewDidAppear(animated: Bool) {
-        super.viewDidAppear(true)
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
         self.friendKey.removeAll()
         self.feed.removeAll()
         self.friend.removeAll()
+        self.tableView.reloadData()
         getInfo()
     }
+    
+    override func viewDidDisappear(animated: Bool) {
+        super.viewDidDisappear(animated)
+        if handle != nil{
+            feedRef.removeObserverWithHandle(handle)
+        }
+    }
+    
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.friend.count
@@ -40,7 +52,6 @@ class FeedViewController: UIViewController {
     }
     
     func getInfo() {
-
         
         let friendRef = firebaseRef.child("users").child(User.currentUserUid()!).child("friends")
         
@@ -56,15 +67,16 @@ class FeedViewController: UIViewController {
     }
     
     func getFunction2() {
-    
+        
         for key in friendKey {
             let userFrdRef = firebaseRef.child("status")
-            userFrdRef.observeEventType(.ChildAdded, withBlock: { (snapshot) in
+            self.feedRef = userFrdRef
+            self.handle = userFrdRef.observeEventType(.ChildAdded, withBlock: { (snapshot) in
                 if let statusDict = snapshot.value as? [String: AnyObject] {
                     let userID = statusDict["userID"] as! String
                     if (userID == key) {
                         if let status = statusDict["status"] as? String {
-                        
+                            
                             self.feed.append(status)
                             
                             
@@ -78,19 +90,22 @@ class FeedViewController: UIViewController {
     
     func getFunction(key: String){
         
-            let nameRef = firebaseRef.child("users").child(key)
-            nameRef.observeEventType(.Value, withBlock: { (snapshot) in
-                if let userDict = snapshot.value as? [String:AnyObject] {
-                    let username = userDict["username"] as! String
-                    self.friend.append(username)
-                    self.tableView.reloadData()
-                }
+        let nameRef = firebaseRef.child("users").child(key)
+        nameRef.observeEventType(.Value, withBlock: { (snapshot) in
+            if let userDict = snapshot.value as? [String:AnyObject] {
+                let username = userDict["username"] as! String
+                self.friend.append(username)
                 
-            })
+                dispatch_async(dispatch_get_main_queue(), {
+                    self.tableView.reloadData()
+                })
+            }
+            
+        })
         
-        }
-        
+    }
     
     
-
+    
+    
 }

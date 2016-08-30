@@ -13,18 +13,27 @@ class FriendsViewController: UIViewController,UITextFieldDelegate, UITableViewDe
     @IBOutlet var tableView: UITableView!
     var userList = [String]()
     var userListUID = [String]()
+    var friendKey = [String]()
     let firebaseRef = FIRDatabase.database().reference()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         observeUser()
+        
+        
         // Do any additional setup after loading the view.
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("userCell", forIndexPath: indexPath)
         cell.textLabel?.text = self.userList[indexPath.row]
-        cell.detailTextLabel?.text = self.userListUID[indexPath.row]
+        for key in friendKey{
+            if key == self .userListUID[indexPath.row]{
+                cell.detailTextLabel?.text = "Friends"
+            }else{
+                cell.detailTextLabel?.text = self.userListUID[indexPath.row]
+            }
+        }
         return cell
     }
     
@@ -49,8 +58,31 @@ class FriendsViewController: UIViewController,UITextFieldDelegate, UITableViewDe
                     }
                 }
             }
+            self.checkFriend()
         })
         
+    }
+    
+    func checkFriend (){
+        let friendRef = firebaseRef.child("users").child(User.currentUserUid()!).child("friends")
+        
+        friendRef.observeEventType(.Value, withBlock:  { (snapshot) in
+            if let friendDict = snapshot.value as? [String: AnyObject] {
+                for (key, _) in friendDict {
+                    self.friendKey.append(key)
+                }
+                
+            }
+            self.checkTrue()
+        })
+        
+    }
+    
+    func checkTrue (){
+        let array1 = self.userListUID
+        let array2 = self.friendKey
+        let result = Set(array1).intersect(Set(array2))
+        print (result)
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {

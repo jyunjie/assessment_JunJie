@@ -13,7 +13,9 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
     let firebaseRef = FIRDatabase.database().reference()
     var userName : String!
     var status = [String]()
+    var result = [String]()
     var statusKey = [String]()
+    var statusRef : FIRDatabaseReference!
     var count = 0
     
     
@@ -21,18 +23,23 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
     @IBOutlet var statusTextFld: UITextField!
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        statusTextFld.delegate = self
+        
+        
+        
     }
     
-    override func viewDidAppear(animated: Bool) {
-        super.viewDidAppear(true)
-        statusTextFld.delegate = self
-            self.status.removeAll()
-            self.statusKey.removeAll()
-            self.tableView.reloadData()
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        self.status.removeAll()
+        observeUser()
+        observeAddedStatus()
+        self.tableView.reloadData()
         
-            observeStatus()
-            observeUser()
+    }
+    
+    override func viewWillDisappear(animated: Bool) {
+        statusRef.removeAllObservers()
         
     }
     
@@ -64,7 +71,10 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
                 if (snapshot.key == User.currentUserUid()) {
                     if let tweetText = tweetDict["username"] as? String{
                         self.userName = tweetText
-                        self.tableView.reloadData()
+                        dispatch_async(dispatch_get_main_queue(), {
+                            self.tableView.reloadData()
+                        })
+                        
                     }
                 }
             }
@@ -74,24 +84,43 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
     
     func observeStatus() {
         let firebaseRef = FIRDatabase.database().reference()
-        let userRef = firebaseRef.child("status")
-        
-        userRef.observeEventType(.ChildAdded, withBlock: {(snapshot) in
+        statusRef = firebaseRef.child("status")
+        statusRef.observeEventType (.Value, withBlock: {(snapshot) in
+            for child in snapshot.children{
+                let userID = child.value.objectForKey("userID") as! String
+                if userID == User.currentUserUid() {
+                    let status = child.value.objectForKey("status") as! String
+                    self.status.append(status)
+                    dispatch_async(dispatch_get_main_queue(), {
+                        self.tableView.reloadData()
+                    })
+                }
+            }
+        })
+    }
+    
+    func observeAddedStatus(){
+        statusRef = firebaseRef.child("status")
+        statusRef.observeEventType (.ChildAdded, withBlock: {(snapshot) in
             
             if let tweetDict = snapshot.value as? [String : AnyObject]{
-                let userID = tweetDict["userID"] as! String
-                if ( userID == User.currentUserUid()) {
-                    let key = snapshot.key
-                    self.statusKey.append(key)
+                print (snapshot.key)
+    
+                let userID = tweetDict["userID"] as? String
+                if (userID == User.currentUserUid()) {
                     if let tweetText = tweetDict["status"] as? String{
                         self.status.append(tweetText)
-                        self.tableView.reloadData()
+                        self.statusKey.append(snapshot.key)
+                        dispatch_async(dispatch_get_main_queue(), {
+                            self.tableView.reloadData()
+                        })
+                        
                     }
                 }
             }
         })
-        
     }
+    
     func textFieldDidBeginEditing(textField: UITextField) {
         self.statusTextFld.text = ""
     }
@@ -118,10 +147,14 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
             
             print("delete \(indexPath.row)")
             let removeRef = self.firebaseRef.child("status").child(self.statusKey[indexPath.row])
+            
             let removeUserStatusRef = self.firebaseRef.child("users").child(User.currentUserUid()!).child("status").child(self.statusKey[indexPath.row])
+            self.statusKey.removeAtIndex(indexPath.row)
             removeRef.removeValue()
             removeUserStatusRef.removeValue()
-            self.tableView.reloadData()
+            dispatch_async(dispatch_get_main_queue(), {
+                self.tableView.reloadData()
+            })
         }
     }
     
@@ -133,14 +166,14 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
         }
     }
     
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if segue.identifier == "userStatusSegue"{
-            let destination = segue.destinationViewController as! UserStatusViewController
-            let indexPath = self.tableView.indexPathForSelectedRow!
-            destination.userStatus = self.status[(indexPath.row)]
-            destination.userStatusKey = self.statusKey[indexPath.row]
+        override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+            if segue.identifier == "userStatusSegue"{
+                let destination = segue.destinationViewController as! UserStatusViewController
+                let indexPath = self.tableView.indexPathForSelectedRow!
+                destination.userStatus = self.status[(indexPath.row)]
+                destination.userStatusKey = self.statusKey[indexPath.row]
+            }
         }
-    }
     
     
 }

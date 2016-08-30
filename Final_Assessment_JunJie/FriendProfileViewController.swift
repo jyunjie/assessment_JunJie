@@ -74,7 +74,6 @@ class FriendProfileViewController: UIViewController, UITableViewDataSource, UITa
     @IBAction func addFriend(sender: AnyObject) {
         let firebaseRef = FIRDatabase.database().reference()
         firebaseRef.child("users").child(User.currentUserUid()!).child("friends").child(self.friend_UID!).setValue(true)
-        self.tabBarController?.selectedIndex = 0
     }
     
 }
